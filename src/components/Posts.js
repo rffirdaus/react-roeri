@@ -28,7 +28,7 @@ function Posts() {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Data Table</h1>
-      <div>
+      <div className="mb-4">
         <input
         type="text"
         placeholder="Search by Name"
@@ -37,22 +37,22 @@ function Posts() {
         className="px-4 py-2 border border-gray-300 rounded"
         />
       </div>
-      <table>
+      <table className="min-w-full border-collapse border border-gray-300">
         <thead>
           <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Occupation</th>
+            <th className="border border-gray-300 px-4 py-2">Id</th>
+            <th className="border border-gray-300 px-4 py-2">Name</th>
+            <th className="border border-gray-300 px-4 py-2">Age</th>
+            <th className="border border-gray-300 px-4 py-2">Occupation</th>
           </tr>
         </thead>
         <tbody>
           {currentData.map((user) => (
             <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>{user.name}</td>
-              <td>{user.age}</td>
-              <td>{user.occupation}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">{user.id}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">{user.name}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">{user.age}</td>
+              <td className="border border-gray-300 px-4 py-2 text-center">{user.occupation}</td>
             </tr>
           ))}
         </tbody>
@@ -67,14 +67,14 @@ function Posts() {
           >
             <option value={5}>5</option>
             <option value={10}>10</option>
-            <option value={10}>20</option>
+            <option value={20}>20</option>
           </select>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
           <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentData === 1}
-          className="px-4 py-2 bg-blue-200 text-white rounded-lg disabled:bg-gray-400"
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg disabled:bg-gray-400"
           >
             Prev
           </button>
@@ -82,7 +82,7 @@ function Posts() {
           <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentData === totalPage}
-          className="px-4 py-2 bg-blue-200 text-white rounded-lg disabled:bg-gray-400"
+          className="px-4 py-2 bg-blue-500 text-white rounded-lg disabled:bg-gray-400"
           >
             Next
           </button>
